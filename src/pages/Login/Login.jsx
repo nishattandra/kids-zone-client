@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import img from '../../assets/images/login/login.svg'
 import { FaFacebook, FaTwitter, FaYoutube, FaGoogle, FaGithub } from 'react-icons/fa';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
+
+    useTitle('login')
     return (
         <div className="hero min-h-screen">
             <div className="hero-content flex-col lg:flex-row">

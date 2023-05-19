@@ -1,8 +1,10 @@
 import React from 'react';
 import img from '../../assets/images/login/login.svg'
 import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const SignUp = () => {
+    useTitle('register')
     return (
         <div className="hero min-h-screen">
             <div className="hero-content flex-col lg:flex-row">
