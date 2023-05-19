@@ -12,7 +12,7 @@ const Navbar = () => {
     <li> <Link to='/login'>Login</Link> </li>} */}
     </>
     return (
-        <div className="navbar h-28 mb-2 rounded-lg">
+        <div className="navbar h-28 mb-2 rounded-lg border-b-orange-500">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

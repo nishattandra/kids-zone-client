@@ -1,13 +1,12 @@
 import React from 'react';
 import Navbar from '../pages/Shared/Navbar/Navbar';
 import { Outlet } from 'react-router-dom';
-import './Main.css'
 
 const Main = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <hr className='bg-orange-500' />
+            <hr className=" h-1  mx-auto bg-orange-400 border-0"></hr>
             <Outlet></Outlet>
         </div>
     );
