@@ -1,10 +1,43 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import img from '../../assets/images/login/login.svg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const SignUp = () => {
+
+    const { createUser, updateUserData, logOut } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const [err, setErr] = useState('')
+    const handleRegister = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+    
+        console.log(name, photo, email, password)
+        createUser(email, password)
+            .then(result => {
+                const createdUser = result.user;
+                console.log(createdUser);
+                updateUserData(result.user, name, photo)
+                event.target.reset()
+                setErr('')
+                navigate('/login')
+                logOut();
+            })
+            .catch(error => {
+                console.log(error);
+                setErr(error.message)
+            })
+        // console.log('register Clicked')
+    }
+
     useTitle('register')
+
+
     return (
         <div className="hero min-h-screen">
             <div className="hero-content flex-col lg:flex-row">
@@ -14,7 +47,8 @@ const SignUp = () => {
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
                         <h1 className="text-3xl text-center font-bold text-orange-600">Sign Up</h1>
-                        <form>
+                        <p>{err}</p>
+                        <form onSubmit={handleRegister}>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -25,14 +59,14 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="text" name='email' placeholder="email" className="input input-bordered" />
+                                <input type="text" name='email' placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="text"
-                                    name='password' placeholder="password" className="input input-bordered" />
+                                    name='password' placeholder="password" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">

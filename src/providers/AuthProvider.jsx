@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import app from '../firebase/firebase.config';
 
 
@@ -29,7 +29,7 @@ const AuthProvider = ({children}) => {
     const updateUserData = (user, name, photo) => {
         setLoading(true);
         console.log(user, name, photo)
-        updateProfile(user, {
+            updateProfile(user, {
             displayName: name,
             photoURL: photo
         })
