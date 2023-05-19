@@ -6,7 +6,7 @@ const Navbar = () => {
 
     const navItems = <>
         <li> <Link to='/'>Home</Link> </li>
-        <li> <Link to='/about'>Blog</Link> </li>
+        <li> <Link to='/blogs'>Blogs</Link> </li>
         {/* {user?.email ? <li><button onClick={handleLogOut}>LogOut</button></li>
     : 
     <li> <Link to='/login'>Login</Link> </li>} */}
@@ -23,7 +23,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link className='w-20' to='/'> <img src={img} alt="" /></Link>
-                <h2 className="btn btn-ghost normal-case text-3xl font-bold mr-0">Kids<span className=' text-orange-600'>Zone</span></h2>
+                <h2 className="btn btn-ghost normal-case text-3xl font-bold mr-0">KIDs<span className=' text-orange-600'>ZOne</span></h2>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
