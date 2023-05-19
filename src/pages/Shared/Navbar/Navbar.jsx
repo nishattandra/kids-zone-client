@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import img from '../../../assets/images/logo/logo.png'
 import { AuthContext } from '../../../providers/AuthProvider';
 
@@ -23,8 +23,8 @@ const Navbar = () => {
     };
 
     const navItems = <>
-        <li> <Link to='/'>Home</Link> </li>
-        <li> <Link to='/blogs'>Blogs</Link> </li>
+        <li> <NavLink className={({ isActive }) => (isActive ? 'text-orange-600 font-bold' : ' font-bold')} to='/'>Home</NavLink> </li>
+        <li> <NavLink className={({ isActive }) => (isActive ? 'text-orange-600 font-bold' : 'font-bold')} to='/blogs'>Blogs</NavLink> </li>
     </>
     return (
         <div className="navbar h-28 mb-2 rounded-lg border-b-orange-500">
