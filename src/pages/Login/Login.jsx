@@ -4,7 +4,7 @@ import img from '../../assets/images/login/login.svg'
 
 const Login = () => {
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen">
             <div className="hero-content flex-col lg:flex-row">
                 <div className=" w-1/2 mr-12">
                     <img className='bg-none border-none' src={img} alt="" />
