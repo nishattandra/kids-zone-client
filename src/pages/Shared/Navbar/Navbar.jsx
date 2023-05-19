@@ -47,14 +47,14 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 {isHovering && (
-                    <h4>{user.displayName}</h4>
+                    <h4 className='font-extrabold mr-2'>{user.displayName}</h4>
                 )}
                 {
                     user && <img onMouseOver={handleMouseOver}
                         onMouseOut={handleMouseOut} style={{ width: '40px', borderRadius: '50%' }} src={user.photoURL} alt="" />
                 }
                 {user?.email ?
-                    <button className="btn btn-active btn-primary" onClick={handleLogOut}>LogOut</button>
+                    <button className="btn btn-active btn-primary ml-2" onClick={handleLogOut}>LogOut</button>
                     :
                     <Link to='/login'>
                         <button className="btn btn-active bg-orange-600 border-0 mr-5">Sign In</button>

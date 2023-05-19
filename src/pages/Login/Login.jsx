@@ -58,6 +58,7 @@ const Login = () => {
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
                         <h1 className="text-3xl text-center font-bold text-orange-600">Sign In</h1>
+                        <p className='text-red-600 text-center border border-orange-400 rounded-lg font-semibold'>{err}</p>
                         <form onSubmit={handleLogin}>
                             <div className="form-control">
                                 <label className="label">
