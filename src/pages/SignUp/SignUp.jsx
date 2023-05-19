@@ -43,7 +43,7 @@ const SignUp = () => {
                                 <input type="submit" value="Sign Up" className="btn bg-orange-600 border-none" />
                             </div>
                         </form>
-                        <p className=' my-4 text-center'>New to Car Doctors? <Link to='/login' className='text-orange-600 font-bold'>Sign In</Link> </p>
+                        <p className=' my-4 text-center'>Already Have an Account? <Link to='/login' className='text-orange-600 font-bold'>Sign In</Link> </p>
                     </div>
                 </div>
             </div>

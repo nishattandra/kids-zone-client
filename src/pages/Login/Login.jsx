@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import img from '../../assets/images/login/login.svg'
+import { FaFacebook, FaTwitter, FaYoutube, FaGoogle, FaGithub } from 'react-icons/fa';
 
 const Login = () => {
     return (
@@ -30,7 +31,9 @@ const Login = () => {
                                 <input type="submit" value="Sign In" className="btn bg-orange-600 border-none" />
                             </div>
                         </form>
-                        <p className=' my-4 text-center'>New to Car Doctors? <Link to='/signup' className='text-orange-600 font-bold'>Sign Up</Link> </p>
+                        <p className=' my-4 text-center'>New to Kids Zone? <Link to='/signup' className='text-orange-600 font-bold'>Sign Up</Link> </p>
+                        <hr />
+                        <button className="btn btn-outline btn-block">Sign in with Google<FaGoogle className='ml-2 text-green-800'></FaGoogle></button>
                     </div>
                 </div>
             </div>

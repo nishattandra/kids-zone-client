@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaGoogle, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaYoutube, FaGoogle, FaGithub } from 'react-icons/fa';
 import img from '../../../assets/images/logo/logo.png'
 
 const Footer = () => {
@@ -34,11 +34,11 @@ const Footer = () => {
                 </div>
                 <div className="md:place-self-center md:justify-self-end ">
                     <div className="grid grid-flow-col gap-4">
-                        <FaTwitter className='text-blue-400'></FaTwitter>
-                        <FaYoutube className='text-red-500'></FaYoutube>
-                        <FaFacebook className='text-blue-400'></FaFacebook>
-                        <FaGithub ></FaGithub>
-                        <FaGoogle className='text-green-600'></FaGoogle>
+                        <FaTwitter className='text-blue-400' style={{height:'24px', width:'24px'}}></FaTwitter>
+                        <FaYoutube className='text-red-500' style={{height:'24px', width:'24px'}}></FaYoutube>
+                        <FaFacebook className='text-blue-500' style={{height:'24px', width:'24px'}}></FaFacebook>
+                        <FaGithub style={{height:'24px', width:'24px'}} ></FaGithub>
+                        <FaGoogle className='text-green-800' style={{height:'24px', width:'24px'}}></FaGoogle>
                     </div>
                 </div>
             </footer>
