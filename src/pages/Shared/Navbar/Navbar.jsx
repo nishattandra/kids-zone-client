@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import img from '../../../assets/images/logo/logo.png'
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+    // console.log(user)
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error));
+    }
+    const [isHovering, setIsHovering] = useState(false);
+
+    const handleMouseOver = () => {
+        setIsHovering(true);
+    };
+
+    const handleMouseOut = () => {
+        setIsHovering(false);
+    };
 
     const navItems = <>
         <li> <Link to='/'>Home</Link> </li>
         <li> <Link to='/blogs'>Blogs</Link> </li>
-        {/* {user?.email ? <li><button onClick={handleLogOut}>LogOut</button></li>
-    : 
-    <li> <Link to='/login'>Login</Link> </li>} */}
     </>
     return (
         <div className="navbar h-28 mb-2 rounded-lg border-b-orange-500">
@@ -22,7 +37,7 @@ const Navbar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <Link className='w-20' to='/'> <img src={img} alt="" /></Link>
+                <img className='md:w-20 sm: w-12' src={img} alt="" />
                 <h2 className="btn btn-ghost normal-case text-3xl font-bold mr-0">KIDs<span className=' text-orange-600'>ZOne</span></h2>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -31,7 +46,20 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Get started</a>
+                {isHovering && (
+                    <h4>{user.displayName}</h4>
+                )}
+                {
+                    user && <img onMouseOver={handleMouseOver}
+                        onMouseOut={handleMouseOut} style={{ width: '40px', borderRadius: '50%' }} src={user.photoURL} alt="" />
+                }
+                {user?.email ?
+                    <button className="btn btn-active btn-primary" onClick={handleLogOut}>LogOut</button>
+                    :
+                    <Link to='/login'>
+                        <button className="btn btn-active bg-orange-600 border-0 mr-5">Sign In</button>
+                    </Link>
+                }
             </div>
         </div>
     );
