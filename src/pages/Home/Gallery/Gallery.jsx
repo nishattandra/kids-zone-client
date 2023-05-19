@@ -12,7 +12,7 @@ import img8 from '../../../assets/images/gallery/8.png'
 const Gallery = () => {
     return (
         <div>
-            <h1 className='text-center m-10 text-4xl font-bold text-orange-600'>Toys Gallery</h1>
+            <h1 className='text-center m-10 text-4xl font-bold'>Toys <span className=' text-orange-600'>Gallery</span> </h1>
             <Marquee>
                 <div className="card card-compact w-96 bg-base-100 shadow-xl mr-4 border-2  border-orange-400 p-4">
                     <figure><img className='w-64 h-48' src={img1} /></figure>
