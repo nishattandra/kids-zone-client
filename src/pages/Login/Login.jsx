@@ -36,7 +36,8 @@ const Login = () => {
                         </form>
                         <p className=' my-4 text-center'>New to Kids Zone? <Link to='/signup' className='text-orange-600 font-bold'>Sign Up</Link> </p>
                         <hr />
-                        <button className="btn btn-outline btn-block">Sign in with Google<FaGoogle className='ml-2 text-green-800'></FaGoogle></button>
+                        <p className='text-center font-extrabold'>OR</p>
+                        <button className="btn btn-outline btn-block border-orange-500">Sign in with Google<FaGoogle className='ml-2 text-green-800'></FaGoogle></button>
                     </div>
                 </div>
             </div>
