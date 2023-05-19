@@ -34,16 +34,16 @@ const Footer = () => {
                 </div>
                 <div className="md:place-self-center md:justify-self-end ">
                     <div className="grid grid-flow-col gap-4">
-                        <FaTwitter className='text-blue-400' style={{height:'24px', width:'24px'}}></FaTwitter>
-                        <FaYoutube className='text-red-600' style={{height:'24px', width:'24px'}}></FaYoutube>
-                        <FaFacebook className='text-blue-500' style={{height:'24px', width:'24px'}}></FaFacebook>
-                        <FaGithub style={{height:'24px', width:'24px'}} ></FaGithub>
-                        <FaGoogle className='text-green-800' style={{height:'24px', width:'24px'}}></FaGoogle>
+                        <FaTwitter className='text-blue-400' style={{ height: '24px', width: '24px' }}></FaTwitter>
+                        <FaYoutube className='text-red-600' style={{ height: '24px', width: '24px' }}></FaYoutube>
+                        <FaFacebook className='text-blue-500' style={{ height: '24px', width: '24px' }}></FaFacebook>
+                        <FaGithub style={{ height: '24px', width: '24px' }} ></FaGithub>
+                        <FaGoogle className='text-green-800' style={{ height: '24px', width: '24px' }}></FaGoogle>
                     </div>
                 </div>
             </footer>
-            <div className='text-center'>
-                <p>Copyright © 2023 - Developed By : <span className='text-orange-600 font-bold'>Nishat Jahan Tandra</span></p>
+            <div className='text-center pb-10'>
+                    <p className=''>Copyright © 2023 - Developed By : <span className='text-orange-600 font-bold'>Nishat Jahan Tandra</span></p>
             </div>
         </div>
     );

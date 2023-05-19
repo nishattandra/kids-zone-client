@@ -24,10 +24,13 @@ const Navbar = () => {
 
     const navItems = <>
         <li> <NavLink className={({ isActive }) => (isActive ? 'text-orange-600 font-bold' : ' font-bold')} to='/'>Home</NavLink> </li>
+        <li> <NavLink className={({ isActive }) => (isActive ? 'text-orange-600 font-bold' : ' font-bold')} to='/allToys'>All Toys</NavLink> </li>
+        <li> <NavLink className={({ isActive }) => (isActive ? 'text-orange-600 font-bold' : ' font-bold')} to='/myToys'>My Toys</NavLink> </li>
+        <li> <NavLink className={({ isActive }) => (isActive ? 'text-orange-600 font-bold' : ' font-bold')} to='/addAToys'>Add a Toys</NavLink> </li>
         <li> <NavLink className={({ isActive }) => (isActive ? 'text-orange-600 font-bold' : 'font-bold')} to='/blogs'>Blogs</NavLink> </li>
     </>
     return (
-        <div className="navbar h-28 mb-2 rounded-lg border-b-orange-500">
+        <div className="navbar h-28 mb-2 rounded-lg border-b-orange-500 md:p-10">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -54,12 +57,13 @@ const Navbar = () => {
                         onMouseOut={handleMouseOut} style={{ width: '40px', borderRadius: '50%' }} src={user.photoURL} alt="" />
                 }
                 {user?.email ?
-                    <button className="btn btn-active btn-primary ml-2" onClick={handleLogOut}>LogOut</button>
+                    <button className="btn bg-orange-600 border-0 ml-2 " onClick={handleLogOut}>LogOut</button>
                     :
                     <Link to='/login'>
-                        <button className="btn btn-active bg-orange-600 border-0 mr-5">Sign In</button>
+                        <button className="btn bg-orange-600 border-0 mr-5">Sign In</button>
                     </Link>
                 }
+
             </div>
         </div>
     );

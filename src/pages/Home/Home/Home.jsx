@@ -1,11 +1,14 @@
 import React from 'react';
 import useTitle from '../../../hooks/useTitle';
+import Banner from '../Banner/Banner';
+import AvailableToys from '../AvailableToys/AvailableToys';
 
 const Home = () => {
     useTitle('home')
     return (
-        <div>
-            
+        <div className='p-10'>
+            <Banner></Banner>
+            <AvailableToys></AvailableToys>
         </div>
     );
 };

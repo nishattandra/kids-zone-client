@@ -11,16 +11,12 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
 
     const [err, setErr] = useState('')
-    const { handleGoogleSignIn, signIn } = useContext(AuthContext)
+    const { handleGoogleSignIn, signIn, handleToast } = useContext(AuthContext)
 
     const navigate = useNavigate();
     const location = useLocation();
-    console.log('login page location', location)
     const from = location.state?.from?.pathname || '/'
 
-    const handleToast = () =>{
-        toast("Sign In Successfully.")
-    }
 
     const googleSignIn = () => {
         handleGoogleSignIn()
