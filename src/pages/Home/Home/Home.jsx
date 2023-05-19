@@ -6,7 +6,7 @@ import AvailableToys from '../AvailableToys/AvailableToys';
 const Home = () => {
     useTitle('home')
     return (
-        <div className='p-10'>
+        <div>
             <Banner></Banner>
             <AvailableToys></AvailableToys>
         </div>

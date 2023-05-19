@@ -7,9 +7,9 @@ const Main = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <hr className="h-px  mx-auto bg-orange-700 border-0"></hr>
+            <hr className="h-px mx-auto bg-orange-200 border-0"></hr>
             <Outlet></Outlet>
-            <hr className="h-px  mx-auto bg-orange-700 border-0"></hr>
+            <hr className="h-px  mx-auto bg-orange-200 border-0"></hr>
             <Footer></Footer>
         </div>
     );
