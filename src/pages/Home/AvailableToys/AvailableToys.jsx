@@ -1,42 +1,32 @@
 import React, { useState } from 'react';
-import { FaArrowRight } from "react-icons/fa";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 const AvailableToys = () => {
+  return (
+    <div className=' mt-16 flex justify-center'>
+      <Tabs>
+        <TabList>
+          <Tab>Category 1</Tab>
+          <Tab>Category 2</Tab>
+          <Tab>Category 3</Tab>
+        </TabList>
 
-    const [jobs, setJob] = useState([]);
-    const [activeTab, setActiveTab] = useState("remote");
-  
-    const handleTabClick = (tabName) => {
-      setActiveTab(tabName);
-    };
-    return (
-        <div>
-        <h1 className="title text-center mt-5 p-5">Available Job's</h1>
-        <div className="tab-container text-center">
-          <div className="text-center w-100 m-auto">
-            <div className="tabs flex justify-center align-center">
-              <div
-                onClick={() => handleTabClick("remote")}
-                className={`tab  tab2 remote ${
-                  activeTab == "remote" ? " bg-orange-600 text-black" : ""
-                }`}
-              >
-                Remote
-              </div>
-              <div
-                onClick={() => handleTabClick("offline")}
-                className={`tab  tab2 Offline ${
-                  activeTab == "offline" ? " bg-orange-600 text-black" : ""
-                }`}
-              >
-                Offline
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="jobs-container mt-5 row"></div>
-      </div>
-    );
+        <TabPanel>
+          <h2>Any content 1</h2>
+        </TabPanel>
+        <TabPanel>
+          <h2>Any content 2</h2>
+        </TabPanel>
+        <TabPanel>
+          <h2>Any content 3</h2>
+        </TabPanel>
+      </Tabs>
+    </div >
+  );
+
 };
+
+
 
 export default AvailableToys;

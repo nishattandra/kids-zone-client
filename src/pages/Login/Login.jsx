@@ -4,14 +4,13 @@ import img from '../../assets/images/login/login.svg'
 import { FaGoogle } from 'react-icons/fa';
 import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../../providers/AuthProvider';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const Login = () => {
 
     const [err, setErr] = useState('')
-    const { handleGoogleSignIn, signIn, handleToast } = useContext(AuthContext)
+    const { handleGoogleSignIn, signIn } = useContext(AuthContext)
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -41,7 +40,6 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                handleToast();
                 navigate(from, { replace: true })
             })
             .catch(error => {
@@ -84,7 +82,6 @@ const Login = () => {
                         <hr />
                         <p className='text-center font-extrabold'>OR</p>
                         <button className="btn btn-outline btn-block border-orange-500" onClick={googleSignIn}>Sign in with Google<FaGoogle className='ml-2 text-green-800'></FaGoogle></button>
-                        <ToastContainer></ToastContainer>
                     </div>
                 </div>
             </div>

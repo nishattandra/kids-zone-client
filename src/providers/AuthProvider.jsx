@@ -1,8 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import app from '../firebase/firebase.config';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 
 export const AuthContext = createContext(null);
@@ -55,10 +53,7 @@ const AuthProvider = ({children}) => {
     const handleGoogleSignIn = () => {
         return signInWithPopup(auth, googleProvider)
     }    
-    
-    const handleToast = () => {
-        toast("Sign In Successfully.")
-    }
+
 
     const authInfo = {
         handleGoogleSignIn,
@@ -67,8 +62,7 @@ const AuthProvider = ({children}) => {
         createUser,
         loading,
         user,
-        updateUserData,
-        handleToast
+        updateUserData
     }
 
     return (
