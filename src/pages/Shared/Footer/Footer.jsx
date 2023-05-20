@@ -43,7 +43,7 @@ const Footer = () => {
                 </div>
             </footer>
             <div className='text-center pb-10'>
-                    <p className=''>Copyright © 2023 - Developed By : <span className='text-orange-600 font-bold'>Nishat Jahan Tandra</span></p>
+                    <p className=''>Copyright © 2023 <br /> Developed By : <span className='text-orange-600 font-bold'>Nishat Jahan Tandra</span></p>
             </div>
         </div>
     );

@@ -18,7 +18,7 @@ import img15 from '../../../assets/images/latest/15.png'
 const LatestProducts = () => {
     return (
         <div className='border-1 bg-orange-100 py-10 mb-16'>
-            <h1 className='text-center m-10 text-4xl font-bold'>Latest <span className=' text-orange-600'>Products</span> </h1>
+            <h1 className='text-center m-10 text-4xl font-bold'>Latest <span className=' text-orange-500'>Products</span> </h1>
             <div className="carousel rounded-box">
                 <div className="carousel-item border-1 border-gray-400">
                     <img className='h-72 w-80' src={img1} />

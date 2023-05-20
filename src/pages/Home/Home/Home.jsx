@@ -4,6 +4,7 @@ import Banner from '../Banner/Banner';
 import AvailableToys from '../AvailableToys/AvailableToys';
 import Gallery from '../Gallery/Gallery';
 import LatestProducts from '../LatestProducts/LatestProducts';
+import About from '../About/About';
 
 const Home = () => {
     useTitle('home')
@@ -12,6 +13,7 @@ const Home = () => {
             <Banner></Banner>
             <Gallery></Gallery>
             <AvailableToys></AvailableToys>
+            <About></About>
             <LatestProducts></LatestProducts>
         </div>
     );
