@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import useTitle from '../../hooks/useTitle';
 import { toast } from 'react-toastify';
-import { AuthContext } from '../../providers/AuthProvider';
 
 
 
