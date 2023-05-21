@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {useLoaderData, useParams} from 'react-router-dom'
 import useTitle from '../../hooks/useTitle';
+import { toast } from 'react-toastify';
 const Update = () => {
     const toy = useLoaderData()
     // console.log(toy)
@@ -24,7 +25,7 @@ const Update = () => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
-                    alert('Updated')
+                    toast.success('Updated Successfully')
                 }
             })
     }

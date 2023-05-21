@@ -2,6 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Link, NavLink } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { RiDeleteBin5Fill} from 'react-icons/ri';
+import {  GrUpdate } from 'react-icons/gr';
+
+
 const MyToys = () => {
     useTitle('My Toys')
     const { user } = useContext(AuthContext)
@@ -29,7 +34,7 @@ const MyToys = () => {
                 .then(data => {
                     console.log(data);
                     if (data.deletedCount > 0) {
-                        alert('Deleted successful');
+                        toast.success('Deleted successful');
                         const remaining = toys.filter(toy => toy._id !== id);
                         settoys(remaining);
                     }
@@ -37,12 +42,12 @@ const MyToys = () => {
         }
     }
     return (
-        <div >
+        <div className='my-10'>
             <div className='space-x-5 w-96 mx-auto'>
-                <button onClick={()=>handleSort(1)} className="btn btn-secondary">Low to High</button>
+                <button onClick={()=>handleSort(1)} className="btn bg-gray-500">Low to High</button>
                 <button onClick={()=>handleSort(-1)} className="btn btn-accent">High to low</button>
             </div>
-            <div className="overflow-x-auto w-full">
+            <div className="overflow-x-auto w-full mt-10">
                 <table className="table w-full">
                     {/* head */}
                     <thead>
@@ -91,8 +96,8 @@ const MyToys = () => {
                                         {toy?.details.slice(0, 40)}
                                     </td>
                                     <th>
-                                        <Link to={`/updatetoy/${toy._id}`}><button className="btn btn-ghost btn-xs">Update</button></Link>
-                                        <button onClick={() => handleDelete(toy._id)} className="btn btn-ghost btn-xs">Delete</button>
+                                        <Link to={`/updatetoy/${toy._id}`}><button className="btn btn-ghost btn-xs"><GrUpdate className='text-blue-500-600' style={{ height: '24px', width: '24px' }}></GrUpdate></button></Link>
+                                        <button onClick={() => handleDelete(toy._id)} className="btn btn-ghost btn-xs"><RiDeleteBin5Fill className='text-red-600' style={{ height: '24px', width: '24px' }}></RiDeleteBin5Fill></button>
                                     </th>
                                 </tr>
                             )

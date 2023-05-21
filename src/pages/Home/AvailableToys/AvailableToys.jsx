@@ -25,7 +25,7 @@ const AvailableToys = () => {
       <Tabs>
         <TabList>
           <Tab>Teddy Bear</Tab>
-          <Tab>Dinasour</Tab>
+          <Tab>Dinosaur</Tab>
           <Tab>Unicorn</Tab>
         </TabList>
 
@@ -35,14 +35,14 @@ const AvailableToys = () => {
               teddy?.map(t =>
                 <div className="card w-96 bg-base-100 shadow-xl" key={t._id}>
                   <figure className="px-10 pt-10">
-                    <img src={t.photo} className="rounded-xl" />
+                    <img src={t.photo} className="rounded-xl w-64" />
                   </figure>
                   <div className="card-body items-center text-center">
                     <h2 className="card-title">{t.name}</h2>
                     <p>Price: {t.price}</p>
-                    <p>Ratinng: {t.rating}</p>
+                    <p>Rating: {t.rating}</p>
                     <div className="card-actions">
-                      <Link to={`/singletoy/${t._id}`}><button className="btn btn-primary">View Details</button></Link>
+                      <Link to={`/singletoy/${t._id}`}><button className="btn bg-orange-600 border-0">View Details</button></Link>
                     </div>
                   </div>
                 </div>
@@ -63,7 +63,7 @@ const AvailableToys = () => {
                     <p>Price: {d.price}</p>
                     <p>Ratinng: {d.rating}</p>
                     <div className="card-actions">
-                      <button className="btn btn-primary">View Details</button>
+                      <button className="btn bg-orange-600 border-0">View Details</button>
                     </div>
                   </div>
                 </div>
@@ -81,10 +81,10 @@ const AvailableToys = () => {
                   </figure>
                   <div className="card-body items-center text-center">
                     <h2 className="card-title">{u.name}</h2>
-                    <p>Price: {u.price}</p>
-                    <p>Ratinng: {u.rating}</p>
+                    <p>Price: ${u.price}</p>
+                    <p>Ratings: {u.rating}</p>
                     <div className="card-actions">
-                      <button className="btn btn-primary">View Details</button>
+                      <button className="btn bg-orange-600 border-0">View Details</button>
                     </div>
                   </div>
                 </div>

@@ -3,7 +3,7 @@ b7a11-toy-marketplace-client-side-nishattandra created by GitHub Classroom
 
 
 ## Live Link
-Hosted in Firebase -> 
+Hosted in Firebase -> KID's ZONE (https://assignment-11-1d2eb.web.app/)
 
 
 ## Server Side Repo

@@ -11,11 +11,11 @@ const AllToys = () => {
     const handleSearch = (event) =>{
         event.preventDefault()
         const search = event.target.search.value;
-        const searched = toys.filter(toy => toy.name.includes(search))
+        const searched = toys.filter(toy => toy.name.toLowerCase().includes(search.toLowerCase()))
         settoys(searched)
     }
     return (
-        <div className="overflow-x-auto w-4/5 mx-auto space-y-3">
+        <div className="overflow-x-auto w-4/5 mx-auto space-y-3 my-10">
             <form onSubmit={handleSearch} className='space-y-3 mt-5'>
                 <div className="form-control">
                     <input type="text" name='search' placeholder="Search Text" className="input input-bordered" />
@@ -24,7 +24,7 @@ const AllToys = () => {
                 <input type="submit" value="Search" className=" btn bg-orange-600 border-0 w-1/2 mx-auto" />
                 </div>
             </form>
-            <table className="table table-zebra w-full">
+            <table className="table table-zebra w-full mt-5">
                 {/* head */}
                 <thead>
                     <tr>
