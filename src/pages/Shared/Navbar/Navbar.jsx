@@ -57,7 +57,7 @@ const Navbar = () => {
                         onMouseOut={handleMouseOut} style={{ width: '40px', borderRadius: '50%' }} src={user.photoURL} alt="" />
                 }
                 {user?.email ?
-                    <button className="btn bg-orange-600 border-0 ml-2 " onClick={handleLogOut}>LogOut</button>
+                    <button className="btn bg-orange-600 border-0 ml-2 " onClick={handleLogOut}>Log Out</button>
                     :
                     <Link to='/login'>
                         <button className="btn bg-orange-600 border-0 mr-5">Sign In</button>

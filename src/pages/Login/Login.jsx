@@ -48,7 +48,7 @@ const Login = () => {
             })
     }
 
-    useTitle('login')
+    useTitle('Login')
 
     return (
         <div className="hero min-h-screen">

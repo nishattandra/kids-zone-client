@@ -35,7 +35,7 @@ const SignUp = () => {
         // console.log('register Clicked')
     }
 
-    useTitle('register')
+    useTitle('Register')
 
 
     return (
