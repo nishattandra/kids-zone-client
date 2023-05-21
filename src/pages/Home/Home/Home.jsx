@@ -7,6 +7,7 @@ import LatestProducts from '../LatestProducts/LatestProducts';
 import About from '../About/About';
 
 const Home = () => {
+    useTitle('home')
     return (
         <div>
             <Banner></Banner>
