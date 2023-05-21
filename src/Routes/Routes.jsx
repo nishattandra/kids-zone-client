@@ -10,6 +10,7 @@ import MyToys from "../pages/MyToys/MyToys";
 import AddAToys from "../pages/AddAToys/AddAToys";
 import PrivateRoutes from "./PrivateRoutes";
 import Update from "../pages/Update/Update";
+import ToyDetails from "../pages/ToyDetails/ToyDetails";
 
 const router = createBrowserRouter([
     {
@@ -43,13 +44,17 @@ const router = createBrowserRouter([
         },
         {
           path:'/addAToys',
-          element:<AddAToys></AddAToys>
+          element:<PrivateRoutes><AddAToys></AddAToys></PrivateRoutes>
         },
         {
           path:'/updatetoy/:id',
-          element: <PrivateRoutes>
-            <Update></Update>
-          </PrivateRoutes>,
+          element: <PrivateRoutes><Update></Update></PrivateRoutes>,
+          loader: ({params})=>fetch(`https://assignment-11-server-six-plum.vercel.app/singletoy/${params.id}`)
+        },
+        {
+          path:'/singletoy/:id',
+          element: <PrivateRoutes><ToyDetails></ToyDetails></PrivateRoutes>,
+          loader: ({params})=>fetch(`https://assignment-11-server-six-plum.vercel.app/singletoy/${params.id}`)
         }
       ]
     },

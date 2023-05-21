@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import img from '../../../assets/images/banner/1.png'
 import { BsArrowRight} from 'react-icons/bs';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 const Banner = () => {
+    useEffect(()=>{
+        AOS.init();
+    })
     return (
-        <div className="hero">
+        <div className="hero" data-aos="fade-down">
             <div className="hero-content flex-col lg:flex-row-reverse justify-evenly">
                 <img src={img} className="max-w-sm rounded-lg " />
                 <div className='w-1/2'>

@@ -19,7 +19,7 @@ const AddAToys = () => {
         const photo = form.photo.value;
 
         const newToy = { name, quantity, seller, email, price, rating, category, details, photo }
-        fetch('http://localhost:5000/addtoy', {
+        fetch('https://assignment-11-server-six-plum.vercel.app/addtoy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

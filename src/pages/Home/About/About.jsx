@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import img1 from '../../../assets/images/banner/3.png'
 import img2 from '../../../assets/images/banner/2.png'
 import { BsArrowRight } from 'react-icons/bs';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 const About = () => {
+    useEffect(()=>{
+        AOS.init();
+    })
     return (
-        <div>
+        <div data-aos="fade-up"
+        data-aos-duration="3000">
             <h3 className='text-4xl  font-bold text-center mt-16'>About <span className='text-orange-500'>Us</span></h3>
             <div className="hero ">
                 <div className="hero-content flex-col lg:flex-row">

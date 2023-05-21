@@ -25,8 +25,10 @@ const Navbar = () => {
     const navItems = <>
         <li> <NavLink className={({ isActive }) => (isActive ? 'text-orange-600 font-bold' : ' font-bold')} to='/'>Home</NavLink> </li>
         <li> <NavLink className={({ isActive }) => (isActive ? 'text-orange-600 font-bold' : ' font-bold')} to='/allToys'>All Toys</NavLink> </li>
-        <li> <NavLink className={({ isActive }) => (isActive ? 'text-orange-600 font-bold' : ' font-bold')} to='/myToys'>My Toys</NavLink> </li>
-        <li> <NavLink className={({ isActive }) => (isActive ? 'text-orange-600 font-bold' : ' font-bold')} to='/addAToys'>Add a Toys</NavLink> </li>
+        {
+            user &&<><li> <NavLink className={({ isActive }) => (isActive ? 'text-orange-600 font-bold' : ' font-bold')} to='/myToys'>My Toys</NavLink> </li>
+            <li> <NavLink className={({ isActive }) => (isActive ? 'text-orange-600 font-bold' : ' font-bold')} to='/addAToys'>Add a Toys</NavLink> </li></>
+        }
         <li> <NavLink className={({ isActive }) => (isActive ? 'text-orange-600 font-bold' : 'font-bold')} to='/blogs'>Blogs</NavLink> </li>
     </>
     return (

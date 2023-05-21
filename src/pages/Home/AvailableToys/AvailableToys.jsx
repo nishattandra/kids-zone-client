@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
@@ -7,7 +8,7 @@ const AvailableToys = () => {
   const [unicorn, setUnicorn] = useState([])
   const [dinosaur, setDinasour] = useState([])
   useEffect(() => {
-    fetch('http://localhost:5000/alltoy').then(res => res.json()).then(data => {
+    fetch('https://assignment-11-server-six-plum.vercel.app/alltoy').then(res => res.json()).then(data => {
       // console.log(data)
       const loadedTeddy = data.filter(da => da.category === "Teddy Bear")
       setTeddy(loadedTeddy)
@@ -19,9 +20,6 @@ const AvailableToys = () => {
     }
     )
   }, [])
-  // console.log(teddy)
-  // console.log(dinosaur)
-  // console.log(unicorn)
   return (
     <div className=' mt-16 flex justify-center'>
       <Tabs>
@@ -44,7 +42,7 @@ const AvailableToys = () => {
                     <p>Price: {t.price}</p>
                     <p>Ratinng: {t.rating}</p>
                     <div className="card-actions">
-                      <button className="btn btn-primary">View Details</button>
+                      <Link to={`/singletoy/${t._id}`}><button className="btn btn-primary">View Details</button></Link>
                     </div>
                   </div>
                 </div>
