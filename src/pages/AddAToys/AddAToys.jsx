@@ -30,7 +30,8 @@ const AddAToys = () => {
             .then(data => {
                 console.log(data);
                 if(data.insertedId){
-                    alert('Successfull')
+                    alert('Successfully Added');
+                    event.target.reset();
                 }
             })
     }
@@ -105,7 +106,6 @@ const AddAToys = () => {
                             {/* <input type="radio" name="category" placeholder="Teddy" className="input input-bordered w-full" /> */}
                             <select className="select select-bordered w-full" name="category">
                                 <option value='Teddy Bear'>Teddy Bear</option>
-                                <option value='Horse'>Horse</option>
                                 <option value='Dinosaur'>Dinosaur</option>
                                 <option value='Unicorn'>Unicorn</option>
                             </select>
